@@ -14,20 +14,16 @@ const displayWeather = document.querySelector(".weather")
 const notFound = document.querySelector(".error")
 
 async function getWeather(cityName) {
-  const geoResponse = await fetch(
-    geocodingURL + `appid=${apiKey}` + `&q={${cityName}}`
-  )
-  const location = await geoResponse.json()
+  // const geoResponse = await fetch(
+  //   geocodingURL + `appid=${apiKey}` + `&q={${cityName}}`
+  // )
+  // const location = await geoResponse.json()
 
-  const lat = location[0].lat
-  const lon = location[0].lon
+  // const lat = location[0].lat
+  // const lon = location[0].lon
 
   const weatherResponse = await fetch(
-    weatherURL +
-      `&appid=${apiKey}` +
-      `&lat=${lat}` +
-      `&lon=${lon}` +
-      `&q=${cityName}`
+    weatherURL + `&appid=${apiKey}` + `&q=${cityName}`
   )
 
   notFound.style.display = "none"
